@@ -276,7 +276,7 @@ OWNTONE_ARG_DISABLE([Spotify support], [spotify], [SPOTIFY_LIBRESPOTC],
 	[OWNTONE_MODULES_CHECK([OWNTONE_OPTS], [LIBPROTOBUF_C],
 		[libprotobuf-c >= 1.0.0], [protobuf_c_message_pack],
 		[protobuf-c/protobuf-c.h])
-	 OWNTONE_VAR_PREPEND([OWNTONE_OPTS_LIBS], [inputs/librespot-c/librespot-c.a])
+	 OWNTONE_VAR_PREPEND([OWNTONE_OPTS_LIBS], [inputs/librespot-c-legacy/librespot-c.a])
 	 AC_DEFINE([SPOTIFY], 1,
 		[Define to 1 to enable Spotify])
 	])
@@ -369,7 +369,7 @@ dnl --- End options ---
 
 dnl Unconditional since we always want to produce Makefiles for dist targets
 AC_CONFIG_SUBDIRS([
-	src/inputs/librespot-c
+	src/inputs/librespot-c-legacy
 ])
 
 AC_CONFIG_FILES([

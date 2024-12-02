@@ -32,14 +32,14 @@
 // and then consider removing.
 
 #ifdef SPOTIFY_LIBRESPOTC
-extern struct spotify_backend spotify_librespotc;
+extern struct spotify_backend spotify_librespotc_legacy;
 #endif
 
 static struct spotify_backend *
 backend_set(void)
 {
 #ifdef SPOTIFY_LIBRESPOTC
-  return &spotify_librespotc;
+  return &spotify_librespotc_legacy;
 #endif
   DPRINTF(E_LOG, L_SPOTIFY, "Invalid Spotify configuration (not built with the configured backend)\n");
   return NULL;

@@ -36,7 +36,7 @@
 #include "db.h"
 #include "transcode.h"
 #include "spotify.h"
-#include "librespot-c/librespot-c.h"
+#include "librespot-c-legacy/librespot-c.h"
 
 // Haven't actually studied ffmpeg's probe size requirements, this is just a
 // guess
@@ -288,7 +288,7 @@ hexdump_cb(const char *msg, uint8_t *data, size_t data_len)
 
 /* ------------------------ librespot-c initialization ---------------------- */
 
-struct sp_callbacks callbacks = {
+static struct sp_callbacks callbacks = {
   .https_get      = https_get_cb,
   .tcp_connect    = tcp_connect,
   .tcp_disconnect = tcp_disconnect,
@@ -623,9 +623,9 @@ deinit(void)
   pthread_mutex_unlock(&spotify_ctx_lock);
 }
 
-struct input_definition input_spotify =
+struct input_definition input_spotify_legacy =
 {
-  .name = "Spotify",
+  .name = "Spotify legacy",
   .type = INPUT_TYPE_SPOTIFY,
   .disabled = 0,
   .setup = setup,
@@ -779,7 +779,7 @@ status_get(struct spotify_status *status)
   pthread_mutex_unlock(&spotify_ctx_lock);
 }
 
-struct spotify_backend spotify_librespotc =
+struct spotify_backend spotify_librespotc_legacy =
 {
   .login = login,
   .login_token = login_token,

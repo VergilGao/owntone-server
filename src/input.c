@@ -56,10 +56,7 @@ extern struct input_definition input_http;
 extern struct input_definition input_pipe;
 extern struct input_definition input_timer;
 #ifdef SPOTIFY_LIBRESPOTC
-extern struct input_definition input_spotify;
-#endif
-#ifdef SPOTIFY_LIBSPOTIFY
-extern struct input_definition input_libspotify;
+extern struct input_definition input_spotify_legacy;
 #endif
 
 // Must be in sync with enum input_types
@@ -69,10 +66,7 @@ static struct input_definition *inputs[] = {
     &input_pipe,
     &input_timer,
 #ifdef SPOTIFY_LIBRESPOTC
-    &input_spotify,
-#endif
-#ifdef SPOTIFY_LIBSPOTIFY
-    &input_libspotify,
+    &input_spotify_legacy,
 #endif
     NULL
 };
