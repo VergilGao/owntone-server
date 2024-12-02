@@ -217,6 +217,7 @@ static cfg_opt_t sec_spotify[] =
     CFG_BOOL("base_playlist_disable", cfg_false, CFGF_NONE),
     CFG_BOOL("artist_override", cfg_false, CFGF_NONE),
     CFG_BOOL("album_override", cfg_false, CFGF_NONE),
+    CFG_BOOL("enable_legacy", cfg_true, CFGF_NONE),
     CFG_END()
   };
 

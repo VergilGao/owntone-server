@@ -369,6 +369,7 @@ dnl --- End options ---
 
 dnl Unconditional since we always want to produce Makefiles for dist targets
 AC_CONFIG_SUBDIRS([
+	src/inputs/librespot-c
 	src/inputs/librespot-c-legacy
 ])
 

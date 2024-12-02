@@ -4,7 +4,8 @@ sbin_PROGRAMS = owntone
 if COND_SPOTIFY
 SPOTIFY_SRC = \
 	library/spotify_webapi.c library/spotify_webapi.h \
-	inputs/spotify.c inputs/spotify.h inputs/spotify_librespotc-legacy.c
+	inputs/spotify.c inputs/spotify.h \
+	inputs/spotify_librespotc.c inputs/spotify_librespotc-legacy.c
 endif
 
 if COND_LASTFM

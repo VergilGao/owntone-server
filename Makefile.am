@@ -1,5 +1,5 @@
 if COND_SPOTIFY
-LIBRESPOTC_SUBDIR=src/inputs/librespot-c-legacy
+LIBRESPOTC_SUBDIR=src/inputs/librespot-c-legacy src/inputs/librespot-c
 endif
 
 ACLOCAL_AMFLAGS = -I m4

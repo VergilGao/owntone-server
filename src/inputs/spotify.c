@@ -25,6 +25,7 @@
 #include <string.h>
 
 #include "logger.h"
+#include "conffile.h"
 #include "spotify.h"
 
 // With just one backend the abstraction implemented here is a bit overkill, but
@@ -33,13 +34,17 @@
 
 #ifdef SPOTIFY_LIBRESPOTC
 extern struct spotify_backend spotify_librespotc_legacy;
+extern struct spotify_backend spotify_librespotc;
 #endif
 
 static struct spotify_backend *
 backend_set(void)
 {
 #ifdef SPOTIFY_LIBRESPOTC
-  return &spotify_librespotc_legacy;
+  if (cfg_getbool(cfg_getsec(cfg, "spotify"), "enable_legacy"))
+    return &spotify_librespotc_legacy;
+
+  return &spotify_librespotc;
 #endif
   DPRINTF(E_LOG, L_SPOTIFY, "Invalid Spotify configuration (not built with the configured backend)\n");
   return NULL;

@@ -57,6 +57,7 @@ extern struct input_definition input_pipe;
 extern struct input_definition input_timer;
 #ifdef SPOTIFY_LIBRESPOTC
 extern struct input_definition input_spotify_legacy;
+extern struct input_definition input_spotify;
 #endif
 
 // Must be in sync with enum input_types
@@ -67,6 +68,7 @@ static struct input_definition *inputs[] = {
     &input_timer,
 #ifdef SPOTIFY_LIBRESPOTC
     &input_spotify_legacy,
+    &input_spotify,
 #endif
     NULL
 };
@@ -170,12 +172,10 @@ map_data_kind(int data_kind)
 
       case DATA_KIND_SPOTIFY:
 #ifdef SPOTIFY_LIBRESPOTC
+	if (cfg_getbool(cfg_getsec(cfg, "spotify"), "enable_legacy") && !inputs[INPUT_TYPE_SPOTIFY_LEGACY]->disabled)
+	  return INPUT_TYPE_SPOTIFY_LEGACY;
 	if (!inputs[INPUT_TYPE_SPOTIFY]->disabled)
 	  return INPUT_TYPE_SPOTIFY;
-#endif
-#ifdef SPOTIFY_LIBSPOTIFY
-	if (!inputs[INPUT_TYPE_LIBSPOTIFY]->disabled)
-	  return INPUT_TYPE_LIBSPOTIFY;
 #endif
 	return -1;
 
