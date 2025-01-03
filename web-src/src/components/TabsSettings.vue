@@ -51,6 +51,17 @@
                   </a>
                 </li>
               </router-link>
+              <router-link
+                v-slot="{ navigate, isActive }"
+                :to="{ name: 'settings-miscellaneous' }"
+                custom
+              >
+                <li :class="{ 'is-active': isActive }">
+                  <a @click="navigate" @keypress.enter="navigate">
+                    <span v-text="$t('page.settings.tabs.miscellaneous')" />
+                  </a>
+                </li>
+              </router-link>
             </ul>
           </div>
         </div>

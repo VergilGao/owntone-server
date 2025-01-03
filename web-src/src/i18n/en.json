@@ -484,6 +484,12 @@
         "show-coverart": "Show cover artwork in album list",
         "show-path": "Show filepath on the \"Now playing\" page"
       },
+      "miscellaneous": {
+        "streaming": {
+          "title": "Streaming",
+          "ignore": "Ignore artwork served by radio stations"
+        }
+      },
       "services": {
         "lastfm": {
           "grant-access": "Login with your Last.fm username and password to enable scrobbling",
@@ -510,6 +516,7 @@
       "tabs": {
         "artwork": "Artwork",
         "general": "General",
+        "miscellaneous": "Miscellaneous",
         "online-services": "Online Services",
         "remotes-and-outputs": "Remotes and Outputs"
       }
