@@ -487,7 +487,9 @@
       "miscellaneous": {
         "streaming": {
           "title": "Streaming",
-          "ignore": "Ignore artwork served by radio stations"
+          "ignore": "Ignore artwork served by radio stations",
+          "keywords-artwork": "Keywords artwork",
+          "keywords-length": "Keywords length"
         }
       },
       "services": {

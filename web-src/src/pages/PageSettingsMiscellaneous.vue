@@ -17,11 +17,11 @@
         <settings-textfield
           category="misc"
           name="streamurl_keywords_artwork_url"
-          :placeholder="$t('page.settings.miscellaneous.streaming.keywords')"
+          :placeholder="$t('page.settings.miscellaneous.streaming.keywords-artwork')"
         >
           <template #label>
             <span
-              v-text="$t('page.settings.miscellaneous.streaming.keywords')"
+              v-text="$t('page.settings.miscellaneous.streaming.keywords-artwork')"
             />
           </template>
         </settings-textfield>
